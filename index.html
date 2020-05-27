@@ -57,16 +57,69 @@
   <section id="Banner" class="content-section">
     <div class="container content-wrap text-center">
       <h1>Face Checker</h1>
-      <h2>부미톨의 기야운 쬬물한 프로젝트 완성을 응원합니다아 (•ө•)♡</h2>
-
       <h3>
-          <em>A Bootstrap Theme to start building a new landing page</em>
-        </h3>
+        <em>A Bootstrap Theme to start building a new landing page</em>
+      </h3>
       <a class="btn btn-primary btn-xl smooth-scroll" href="#About">Find Out More</a>
     </div>
     <div class="overlay"></div>
   </section>
   <!-- Header Ends -->
+
+  <!-- File Upload Starts -->
+  <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <div class="file-upload">
+    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+
+    <div class="image-upload-wrap">
+      <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+      <div class="drag-text">
+        <h3>Drag and drop a file or select add Image</h3>
+      </div>
+    </div>
+    <div class="file-upload-content">
+      <img class="file-upload-image" src="#" alt="your image" />
+      <div class="image-title-wrap">
+        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          $('.image-upload-wrap').hide();
+
+          $('.file-upload-image').attr('src', e.target.result);
+          $('.file-upload-content').show();
+
+          $('.image-title').html(input.files[0].name);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+
+      } else {
+        removeUpload();
+      }
+    }
+
+    function removeUpload() {
+      $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+      $('.file-upload-content').hide();
+      $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function() {
+      $('.image-upload-wrap').addClass('image-dropping');
+    });
+    $('.image-upload-wrap').bind('dragleave', function() {
+      $('.image-upload-wrap').removeClass('image-dropping');
+    });
+  </script>
+  <!-- File Upload Ends -->
+
   <!-- About Us Starts -->
   <section id="About" class="content-section">
     <div class="container text-center">
@@ -75,7 +128,8 @@
           <div class="block-heading">
             <h2>About Us</h2>
           </div>
-          <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+            a type specimen book.</p>
         </div>
       </div>
     </div>
@@ -346,18 +400,18 @@
       <ul class="list-inline">
         <li class="list-inline-item">
           <a class="social-link rounded-circle text-white mr-3" href="javascript:void(0)">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
         </li>
         <li class="list-inline-item">
           <a class="social-link rounded-circle text-white mr-3" href="javascript:void(0)">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
         </li>
         <li class="list-inline-item">
           <a class="social-link rounded-circle text-white" href="javascript:void(0)">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </a>
         </li>
       </ul>
       <p class="text-muted small mb-0">Copyright © Your Website 2018</p>
