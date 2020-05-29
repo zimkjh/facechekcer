@@ -126,7 +126,7 @@
     <div class="container content-wrap text-center">
       <button class="file-upload-btn" type="button" onclick="predict()">나에게 어울리는 대학은?</button>
       <div id="result-container" class="result-container">
-        <h4 style="padding-top: 30px; padding-bottom: 30px; visibility: hidden">어울리는 대학 찾는중..</h4>
+        <h4 id="predict-message" style="padding-top: 30px; padding-bottom: 30px; visibility: hidden">어울리는 대학 찾는중..</h4>
       </div>
       <script type="text/javascript">
         // the link to your model provided by Teachable Machine export panel
@@ -154,6 +154,11 @@
 
         // run the webcam image through the image model
         async function predict() {
+          // predict 하는중 message 보이도록
+          var message = document.getElementById("predict-message")
+          console.log(message)
+          message.style.visibility = "visible"
+
           // predict can take in an image, video or canvas html element
           var image = document.getElementById("face-image")
           const prediction = await model.predict(image);
