@@ -580,7 +580,7 @@ footer.footer p.small a:hover, footer.footer p.small a.focus {
 }
 
 .file-upload-btn:hover {
-  background: #1AA059;
+  background: #5994d9;
   color: #ffffff;
   transition: all .2s ease;
   cursor: pointer;
@@ -629,10 +629,10 @@ footer.footer p.small a:hover, footer.footer p.small a.focus {
 }
 
 .drag-text h3 {
-  font-weight: 100;
   text-transform: uppercase;
   color: #6d62e4;
   padding: 60px 0;
+  font-size: 1.2rem;
 }
 
 .file-upload-image {
