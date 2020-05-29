@@ -580,7 +580,7 @@ footer.footer p.small a:hover, footer.footer p.small a.focus {
 }
 
 .file-upload-btn:hover {
-  background: #5994d9;
+  background: #968EEB;
   color: #ffffff;
   transition: all .2s ease;
   cursor: pointer;
@@ -667,5 +667,9 @@ footer.footer p.small a:hover, footer.footer p.small a.focus {
 .remove-image:active {
   border: 0;
   transition: all .2s ease;
+}
+
+.result-container h4 {
+  font-size: 1rem;
 }
 /* My Style Ends */
