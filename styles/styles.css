@@ -44,8 +44,8 @@ h1,h2,h3,h4,h5,h6 {
 span {
 	color: #fff;
 	vertical-align: middle;
-	margin-left: 9px;
-	font-size: 24px;
+	margin-left: 5px;
+	font-size: 0.7rem;
 	font-family: 'Source Sans Pro', sans-serif;
 	text-transform: capitalize;
 }
@@ -615,7 +615,7 @@ footer.footer p.small a:hover, footer.footer p.small a.focus {
 
 .image-dropping,
 .image-upload-wrap:hover {
-  background-color: #6d62e4;
+  background-color: #EAE8FB;
   border: 4px dashed #ffffff;
 }
 
