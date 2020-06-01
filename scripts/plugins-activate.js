@@ -18,6 +18,15 @@
       $jq('html,body').stop().animate({ scrollTop: offset }, 200);
       $jq(".menu-toggle").trigger("click");
     });
+    // Smoothscroll script for button
+    $jq(".smooth-scroll-btn").click(function(e) {
+      e.preventDefault();
+      var dis = $jq(this),
+        target = dis.attr("href"),
+        offset = parseInt($jq(target).offset().top),
+        header = $jq(".sidebar-nav");
+      $jq('html,body').stop().animate({ scrollTop: offset }, 200);
+    });
     // Closes responsive menu when a scroll trigger link is clicked
     $jq('#sidebar-wrapper .js-scroll-trigger').click(function() {
       $jq("#sidebar-wrapper").removeClass("active");
